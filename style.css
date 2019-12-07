@@ -1,0 +1,15 @@
+#button {
+    background-color: #4287f5;
+    color: white;
+    border: 0;
+    border-radius: 6px;
+}
+
+#result {
+    font-size: 24px;
+    font-style: italic;
+}
+
+#author {
+    font-size: 32px;
+}
