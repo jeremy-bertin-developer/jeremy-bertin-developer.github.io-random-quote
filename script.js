@@ -4,8 +4,9 @@ function displayData() {
 
     const RESULT = document.getElementById("result");
     const AUTHOR = document.getElementById("author");
+    const URL = "https://api.quotable.io/random";
 
-    fetch("https://programming-quotes-api.herokuapp.com/quotes/random")
+    fetch(URL)
         .then(function (resp) {
             // Transform the returned json string data into a real json object.
             return resp.json()
@@ -24,8 +25,10 @@ function displayData() {
                 RESULT.innerHTML = "...loading";
             }, 900);
             setTimeout(function(){
-                RESULT.innerHTML = JSON.stringify(data.en);
-                AUTHOR.innerHTML = data.author;
+                RESULT.innerHTML = JSON.stringify(data.content);
             }, 1500)
+            setTimeout(function(){
+                AUTHOR.innerHTML = data.author;
+            }, 1800)
         });
 }
